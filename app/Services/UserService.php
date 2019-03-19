@@ -30,6 +30,7 @@ class UserService{
         $params = [
             'email_verified_at' => Carbon::now()->timestamp
         ];
+
         return $this->userRepository->update($params, $user->id);
     }
 }
