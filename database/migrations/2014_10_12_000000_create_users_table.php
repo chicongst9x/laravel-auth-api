@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('phone_number')->nullable();
             $table->text('description')->nullable();
             $table->string('avatar')->nullable();
+            $table->tinyInteger('type')->default(1)->comment('1 -> Freelancer | 2 -> Business');
             $table->tinyInteger('status')->default(1)->comment('1 -> IS_ACTIVE | 2 -> IS_BLOCK');
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();

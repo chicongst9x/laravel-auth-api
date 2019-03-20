@@ -9,7 +9,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::group(['namespace' => 'Api\V1', 'prefix' => 'v1'], function(){
     Route::post('register', 'AuthController@register');
     Route::post('login', 'AuthController@authenticate');
-    Route::get('verify-email', 'AuthController@verifyEmailRegister');
+    Route::get('verify-email', 'AuthController@verifyRegisteredMail');
 
     Route::group(['middleware' => ['jwt.verify']], function() {
         Route::post('logout', 'AuthController@logout');

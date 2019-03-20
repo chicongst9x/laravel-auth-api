@@ -20,9 +20,9 @@ class UserService{
         return $this->userRepository->create($params);
     }
 
-    public function sendEmailCompletedRegistration($email, $token)
+    public function sendMailVerification($email, $token)
     {
-        Mail::to($email)->send(new SendMailRegistration($token));
+        return Mail::to($email)->send(new SendMailRegistration($token));
     }
 
     public function updateUserRegisterDone($user)

@@ -5,9 +5,10 @@ trait MacroResponse
     /*
      * Success response
      */
-    public function success($data, $httpCode = 200){
+    public function success($message = '', $data, $httpCode = 200){
         return response()->json([
             'status' => true,
+            'message' => $message,
             'data' => $data
         ], $httpCode);
     }
